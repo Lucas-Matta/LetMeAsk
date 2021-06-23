@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { AuthContext } from '../App';
+
 import ilustrationImg from '../assets/illustration.svg';
 import logoImg from '../assets/logo.svg';
 import googleIconImg from '../assets/google-icon.svg';
@@ -10,10 +12,14 @@ import { Button } from '../components/Button';
 
 export function Home(){
     const history = useHistory();
+    const { user, signInWithGoogle } = useContext(AuthContext)
 
     // Função para mandar o usuário para outra tela, e logar no aplicativo
-    function handleCreateRoom(){
-       
+    async function handleCreateRoom(){
+       if(!user){
+           await signInWithGoogle()
+       }
+
         history.push('/rooms/new');
     }
 
