@@ -33,7 +33,7 @@ export function NewRoom(){
         })
 
         // Redireciona o usuário para a sala selecionada
-        history.push(`/rooms/${firebaseRoom.key}`);
+        history.push(`/admin/rooms/${firebaseRoom.key}`);
     }
 
     return(

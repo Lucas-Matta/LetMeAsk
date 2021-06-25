@@ -1,3 +1,4 @@
+import '../styles/room.scss';
 import { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 
-import '../styles/room.scss';
+
 
 // TypeScript
 type RoomParams = {
