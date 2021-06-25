@@ -40,6 +40,12 @@ export function Home(){
             alert('Sala não existe!');
             return;
         }
+
+        // Verificação para ver se a sala foi fechada ou não
+        if(roomRef.val().endedAt){
+            alert('Sala não Existe!');
+            return;
+        }
         
         // Redireciona o usuário para a sala digitada
         history.push(`/rooms/${roomCode}`);
