@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { database } from "../services/firebase";
+import { useAuth } from "./useAuth";
 
 // TypeScript
 type Questions = {
@@ -11,6 +12,8 @@ type Questions = {
     content: string;
     isAnswered: boolean;
     isHighlighted: boolean;
+    likeCount: number;
+    likeId: string | undefined;
 }
 
 // Typescript Record para declarar objeto
@@ -22,6 +25,9 @@ type FirebaseQuestions = Record<string, {
     content: string;
     isAnswered: boolean;
     isHighlighted: boolean;
+    likes: Record<string, {
+        authorId: string;
+    }>
 }>
 
 export function useRoom(roomId: string){
@@ -29,6 +35,7 @@ export function useRoom(roomId: string){
      const [questions, setQuestions] = useState<Questions[]>([]);
      const [title, setTitle] = useState('');
 
+     const { user } = useAuth();
 
     useEffect(() => {
         const roomRef = database.ref(`rooms/${roomId}`);
@@ -46,14 +53,21 @@ export function useRoom(roomId: string){
                     author: value.author,
                     isAnswered: value.isAnswered,
                     isHighlighted: value.isHighlighted,
+                    likeCount: Object.values(value.likes ?? {}).length,
+                    // Vai verificar se o usuário deu like, se não, vai retornar nulo (não vai tentar nem buscar infor)
+                    likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId == user?.id)?.[0],
                 }
             })
 
             setTitle(databaseRoom.title);
             setQuestions(parsedQuestion);
         })
+        // Vai remover todos os eventos
+        return () => {
+            roomRef.off('value');
+        }
 
-    }, [roomId]);
+    }, [roomId, user?.id]);
 
     return { questions, title }
 }
