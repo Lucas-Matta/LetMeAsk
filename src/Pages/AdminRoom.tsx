@@ -63,14 +63,14 @@ export function AdminRoom(){
             <header>
                 <div className="content">
                     <img src={logoImg} alt="Logo letmeask" />
-                    <div>
+                    <div className="content2">
                         <RoomCode code={roomId} />
                         <Button onClick={handleEndRoom} isOutlined >Encerrar Sala</Button>
                     </div>
                 </div>
             </header>
 
-            <main>
+            <main className="roomMain">
                 <div className="room-title">
                     <h1>Sala {title}</h1>
                     {questions.length > 0 &&
