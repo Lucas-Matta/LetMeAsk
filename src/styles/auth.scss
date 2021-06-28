@@ -142,3 +142,23 @@
         }
     }
 }
+
+@media screen and (max-width: 900px){
+    aside{
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .main{
+        width: 30%;
+
+        .create-room{
+            padding-right: 5px;
+
+            img{
+                padding-left: 10px;
+            }
+        }
+    }
+}

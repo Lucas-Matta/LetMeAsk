@@ -111,3 +111,12 @@
         }
     }
 }
+
+@media screen and (max-width: 900px){
+    .roomMain{
+        padding: 0 40px;
+    }
+    .room-title span{
+        text-align: center;
+    }
+}
