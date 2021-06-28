@@ -1,6 +1,6 @@
 Dicas para levar o projeto para o próximo Nível:
 
-1 - Fazar Responsivo
+    1 - Fazar Responsivo
 2 - Tema Dark e Light
 3 - Testar em outros Bancos de Dados (supaBase)
 4 - Versão PWA
