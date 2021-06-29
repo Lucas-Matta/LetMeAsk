@@ -1,5 +1,5 @@
 import '../styles/room.scss';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
 import logoImg from '../assets/logo.svg';
@@ -10,14 +10,24 @@ import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 
-
+// Importando Switch para trocar o thema
+import Switch from 'react-switch';
+import { ThemeContext } from 'styled-components';
 
 // TypeScript
 type RoomParams = {
     id: string;
 }
 
-export function Room(){
+// TypeScript, formato das propriedades que a Room recebe
+interface Props {
+    toggleTheme(): void;
+}
+
+export function Room({ toggleTheme }: Props){
+    // Vai pegar o contexto de cores
+    const { colors } = useContext(ThemeContext);
+
     const { user } = useAuth();
     const params = useParams<RoomParams>();
     const roomId = params.id
@@ -72,6 +82,17 @@ export function Room(){
                 <div className="content">
                     <img src={logoImg} alt="Logo letmeask" />
                     <RoomCode code={roomId} />
+                    <Switch 
+                        onChange={toggleTheme}
+                        checked={true}
+                        checkedIcon={false}
+                        uncheckedIcon={false}
+                        height={10}
+                        width={40}
+                        handleDiameter={20}
+                        offColor={colors.secundary}
+                        onColor={colors.primary}
+                    />
                 </div>
             </header>
 
@@ -80,7 +101,7 @@ export function Room(){
                     <h1>Sala {title}</h1>
                     {questions.length > 0 &&
                         <span>{questions.length} Pergunta(s)</span>
-                    }        
+                    }   
                 </div>
 
                 <form onSubmit={handleSendQuestion}>
