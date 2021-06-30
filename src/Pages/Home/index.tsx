@@ -10,6 +10,8 @@ import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
 
+import { PageAuth, Aside } from './home';
+
 export function Home(){
     const history = useHistory();
     const { user, signInWithGoogle } = useAuth();
@@ -52,12 +54,12 @@ export function Home(){
     }
 
     return(
-        <div id="page-auth">
-            <aside>
+        <PageAuth>
+            <Aside>
                 <img src={ilustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
                 <p>Tire as dúvidas da sua audiencia em tempo real</p>
-            </aside>
+            </Aside>
 
             <main className="main">
                 <div className="main-content">
@@ -81,6 +83,6 @@ export function Home(){
                     </form>
                 </div>
             </main>
-        </div>
+        </PageAuth>
     )
 }

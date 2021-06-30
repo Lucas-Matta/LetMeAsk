@@ -5,10 +5,10 @@ export default {
 
   colors: {
     primary: "#835afd",
-    secundary: "#e559f9",
+    secundary: "#835afd",
 
-    background_primary: "#f1f1f1",
-    background_secundary: "#fff",
+    background_primary: "#fff",
+    background_secundary: "#835afd",
     text: "#333",
   },
 };
