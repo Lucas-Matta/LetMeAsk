@@ -11,8 +11,6 @@ import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 
-
-
 import '../styles/room.scss';
 
 // TypeScript

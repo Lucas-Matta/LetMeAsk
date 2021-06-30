@@ -1,12 +1,14 @@
+import { LIGHT } from "../../constants/theme";
+
 export default {
-    title: 'light',
+  title: LIGHT,
 
-    colors: {
-        // Cor primaria
-        primary: '#835afd',
-        secundary: '#e559f9',
+  colors: {
+    primary: "#c62e65",
+    secundary: "#d63af9",
 
-        background: '#FFF',
-        text: '#000'
-    },
-}
+    background_primary: "#f1f1f1",
+    background_secundary: "#fff",
+    text: "#333",
+  },
+};

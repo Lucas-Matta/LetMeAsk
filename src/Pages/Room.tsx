@@ -1,33 +1,20 @@
 import '../styles/room.scss';
-import { FormEvent, useState, useContext } from 'react';
+import { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import logoImg from '../assets/logo.svg';
 import { Button } from '../components/Button';
 import { Question } from '../components/Question';
-import { RoomCode } from '../components/RoomCode';
 import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
-
-// Importando Switch para trocar o thema
-import Switch from 'react-switch';
-import { ThemeContext } from 'styled-components';
+import Header from '../components/Header';
 
 // TypeScript
 type RoomParams = {
     id: string;
 }
 
-// TypeScript, formato das propriedades que a Room recebe
-interface Props {
-    toggleTheme(): void;
-}
-
-export function Room({ toggleTheme }: Props){
-    // Vai pegar o contexto de cores
-    const { colors } = useContext(ThemeContext);
-
+export function Room(){
     const { user } = useAuth();
     const params = useParams<RoomParams>();
     const roomId = params.id
@@ -78,24 +65,7 @@ export function Room({ toggleTheme }: Props){
 
     return(
         <div id="page-room">
-            <header>
-                <div className="content">
-                    <img src={logoImg} alt="Logo letmeask" />
-                    <RoomCode code={roomId} />
-                    <Switch 
-                        onChange={toggleTheme}
-                        checked={true}
-                        checkedIcon={false}
-                        uncheckedIcon={false}
-                        height={10}
-                        width={40}
-                        handleDiameter={20}
-                        offColor={colors.secundary}
-                        onColor={colors.primary}
-                    />
-                </div>
-            </header>
-
+            <Header />
             <main className="roomMain">
                 <div className="room-title">
                     <h1>Sala {title}</h1>
@@ -155,3 +125,15 @@ export function Room({ toggleTheme }: Props){
         </div>
     )
 }
+
+/*                     <Switch 
+                        onChange={() => {}}
+                        checked={true}
+                        checkedIcon={false}
+                        uncheckedIcon={false}
+                        height={10}
+                        width={40}
+                        handleDiameter={20}
+                        offColor={colors.secundary}
+                        onColor={colors.primary}
+                    /> */

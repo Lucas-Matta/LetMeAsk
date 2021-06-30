@@ -12,13 +12,12 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
-    html,body{
-        background: ${props => props.theme.colors.background};
-        color: ${props => props.theme.colors.text};
+    body{
+        background: ${(props) => props.theme.colors.background_primary};
+        color: ${(props) => props.theme.colors.text};
     }
 
     body, input, button, textarea{
         font: 400 16px 'Roboto', sans-serif;
     }
 `;
-
