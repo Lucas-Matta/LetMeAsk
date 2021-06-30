@@ -9,6 +9,6 @@ export default {
 
     background_primary: "#131516",
     background_secundary: "rgb(31, 2, 119)",
-    text: "#fff",
+    text: "#FFF",
   },
 };

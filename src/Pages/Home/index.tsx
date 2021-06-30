@@ -10,7 +10,7 @@ import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
 
-import { PageAuth, Aside } from './home';
+import { PageAuth, Aside, Main, MainContent } from './home';
 
 export function Home(){
     const history = useHistory();
@@ -61,8 +61,8 @@ export function Home(){
                 <p>Tire as dúvidas da sua audiencia em tempo real</p>
             </Aside>
 
-            <main className="main">
-                <div className="main-content">
+            <Main>
+                <MainContent>
                     <img src={logoImg} alt="Letmeask" />
                     <button className="create-room" onClick={handleCreateRoom}>
                         <img src={googleIconImg} alt="Logo do Google" />
@@ -81,8 +81,8 @@ export function Home(){
                             Entrar na sala
                         </Button>
                     </form>
-                </div>
-            </main>
+                </MainContent>
+            </Main>
         </PageAuth>
     )
 }

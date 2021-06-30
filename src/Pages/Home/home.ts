@@ -38,5 +38,25 @@ export const Aside = styled.aside`
         }
 `;
 
+export const Main = styled.main`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 8;
 
-// 
+    padding: 0 32px;
+`;
+
+export const MainContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+
+    > img{
+        align-self: center;
+    }
+`;
