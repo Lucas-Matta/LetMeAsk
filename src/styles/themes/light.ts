@@ -4,8 +4,8 @@ export default {
   title: LIGHT,
 
   colors: {
-    primary: "#c62e65",
-    secundary: "#d63af9",
+    primary: "#835afd",
+    secundary: "#e559f9",
 
     background_primary: "#f1f1f1",
     background_secundary: "#fff",

@@ -17,6 +17,7 @@ interface ThemeContextData {
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 
 const ThemeContextProvider: React.FC = ({ children }) => {
+  
   const [theme, setTheme] = usePersistedState<DefaultTheme>(
     KEY_LOCAL_STORAGE_THEME,
     light
