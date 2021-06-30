@@ -125,15 +125,3 @@ export function Room(){
         </div>
     )
 }
-
-/*                     <Switch 
-                        onChange={() => {}}
-                        checked={true}
-                        checkedIcon={false}
-                        uncheckedIcon={false}
-                        height={10}
-                        width={40}
-                        handleDiameter={20}
-                        offColor={colors.secundary}
-                        onColor={colors.primary}
-                    /> */

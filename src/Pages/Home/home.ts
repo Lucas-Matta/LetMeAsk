@@ -59,4 +59,11 @@ export const MainContent = styled.div`
     > img{
         align-self: center;
     }
+
+    > button{
+        background: ${props => props.theme.colors.background_three};
+    }    
+
 `;
+
+// 
