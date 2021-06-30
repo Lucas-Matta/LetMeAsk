@@ -1,13 +1,13 @@
-import '../styles/room.scss';
+import '../../styles/room.scss';
 import { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Button } from '../components/Button';
-import { Question } from '../components/Question';
-import { useAuth } from '../hooks/useAuth';
-import { useRoom } from '../hooks/useRoom';
-import { database } from '../services/firebase';
-import Header from '../components/Header';
+import { Button } from '../../components/Button';
+import { Question } from '../../components/Question';
+import { useAuth } from '../../hooks/useAuth';
+import { useRoom } from '../../hooks/useRoom';
+import { database } from '../../services/firebase';
+import Header from '../../components/Header';
 
 // TypeScript
 type RoomParams = {
