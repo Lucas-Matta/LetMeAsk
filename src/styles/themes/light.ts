@@ -11,8 +11,8 @@ export default {
 
     background_primary: "#fff",
     background_secundary: "#835afd",
-    background_three: "", // Botão Laranja
+    background_three: "#ea4335", // Botão Laranja
     background_four:  "",  // Botão Roxo
-    text: "#FFF",
+    text: "black",
   },
 };

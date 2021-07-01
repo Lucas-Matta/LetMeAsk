@@ -5,12 +5,15 @@ import ilustrationImg from '../../assets/illustration.svg';
 import logoImg from '../../assets/logo.svg';
 import googleIconImg from '../../assets/google-icon.svg';
 
-import '../../styles/auth.scss';
+// Responsivo da Home
+import '../../styles/responsive/home.scss'
+
+// Estilo da Home
+import { PageAuth, Aside, Main, MainContent } from '../../styles/home';
+
 import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
-
-import { PageAuth, Aside, Main, MainContent } from '../../styles/home';
 
 export function Home(){
     const history = useHistory();
