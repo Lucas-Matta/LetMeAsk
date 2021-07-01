@@ -1,7 +1,7 @@
 // Declara todos os atributos que o botão pode receber
 import { ButtonHTMLAttributes } from 'react';
 
-import '../styles/button.scss';
+import { ButtonStyle } from '../styles/button';
 
 // Precisa passar o elemento do botão em <> (tipagem global)
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -10,6 +10,8 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 export function Button({ isOutlined = false, ...props}: ButtonProps){
     return(
-        <button className={`button ${isOutlined ? 'outlined' : '' }`} {...props} />
+        <ButtonStyle>
+            <button className={`button ${isOutlined ? 'outlined' : '' }`} {...props} />
+        </ButtonStyle>
     )
 }

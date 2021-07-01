@@ -12,7 +12,7 @@ export default {
     background_primary: "#fff", // Branco
     background_secundary: "#835afd",// Roxo Claro
     background_three: "#ea4335", // Botão Laranja
-    background_four:  "",
+    background_four:  "#835afd",
     background_five: "#e559f9", // Rosa Fraco
     text: "black",
   },
