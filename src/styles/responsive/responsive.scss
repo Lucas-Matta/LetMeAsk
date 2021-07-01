@@ -1,0 +1,44 @@
+@media screen and (max-width: 900px){
+    #roomMain{
+        padding: 0 40px;
+    }
+
+    #roomTitle span{
+        text-align: center;
+    }
+
+    aside{
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .main{
+        width: 30%;
+
+        .create-room{
+            padding-right: 5px;
+
+            img{
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 630px){
+    .content{
+        text-align: center;
+        flex-direction: column;
+
+        > img{
+            padding: 0 45px;
+            margin-left: 8px;
+            margin-bottom: 3px;
+        }
+    }
+    
+    .content2{
+        padding-top: 20px;
+    }
+}

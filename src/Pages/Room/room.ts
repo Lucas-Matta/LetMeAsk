@@ -80,3 +80,7 @@ export const FormRoom = styled.form`
         }
     }
 `;
+
+export const QuestionList = styled.div`
+    margin-top: 32px;
+`;

@@ -1,4 +1,9 @@
-import '../../styles/room.scss';
+// Estilo da Pagina
+import './room';
+
+// Responsivo da Pagina
+import '../../styles/responsive/responsive.scss';
+
 import { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -9,7 +14,7 @@ import { useRoom } from '../../hooks/useRoom';
 import { database } from '../../services/firebase';
 import Header from '../../components/Header';
 
-import { Main, RoomTitle, FormRoom } from '../../styles/room';
+import { Main, RoomTitle, FormRoom, QuestionList } from './room';
 
 // TypeScript
 type RoomParams = {
@@ -69,7 +74,7 @@ export function Room(){
         <div id="page-room">
             <Header />
             <Main id="roomMain">
-                <RoomTitle>
+                <RoomTitle id="roomTitle">
                     <h1>Sala {title}</h1>
                     {questions.length > 0 &&
                         <span>{questions.length} Pergunta(s)</span>
@@ -95,7 +100,7 @@ export function Room(){
                     </div>
                 </FormRoom>
                 
-                <div className="question-list">
+                <QuestionList>
                     {questions.map(question => {
                         return(
                             <Question
@@ -121,8 +126,7 @@ export function Room(){
                             </Question>
                         );
                     })}
-                </div>
-
+                </QuestionList>
             </Main>
         </div>
     )

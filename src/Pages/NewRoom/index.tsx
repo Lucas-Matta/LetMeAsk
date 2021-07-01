@@ -4,11 +4,11 @@ import { FormEvent, useState } from 'react';
 import ilustrationImg from '../../assets/illustration.svg';
 import logoImg from '../../assets/logo.svg';
 
-// Responsivo da Home
-import '../../styles/responsive/home.scss'
+// Responsivo
+import '../../styles/responsive/responsive.scss';
 
 // Estilo da Home
-import { PageAuth, Aside, Main, MainContent } from '../../styles/home';
+import { PageAuth, Aside, Main, MainContent } from '../Home/home';
 
 import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';

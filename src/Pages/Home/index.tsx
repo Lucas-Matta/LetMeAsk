@@ -6,10 +6,10 @@ import logoImg from '../../assets/logo.svg';
 import googleIconImg from '../../assets/google-icon.svg';
 
 // Responsivo da Home
-import '../../styles/responsive/home.scss'
+import '../../styles/responsive/responsive.scss';
 
 // Estilo da Home
-import { PageAuth, Aside, Main, MainContent } from '../../styles/home';
+import { PageAuth, Aside, Main, MainContent } from './home';
 
 import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';

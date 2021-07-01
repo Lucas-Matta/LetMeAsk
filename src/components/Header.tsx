@@ -1,4 +1,4 @@
-import '../styles/room.scss';
+import '../styles/room2.scss'
 
 import React, { useContext } from "react";
 import Switch from "react-switch";
