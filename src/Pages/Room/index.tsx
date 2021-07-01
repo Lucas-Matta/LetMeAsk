@@ -9,6 +9,8 @@ import { useRoom } from '../../hooks/useRoom';
 import { database } from '../../services/firebase';
 import Header from '../../components/Header';
 
+import { Main, RoomTitle, FormRoom } from '../../styles/room';
+
 // TypeScript
 type RoomParams = {
     id: string;
@@ -66,15 +68,15 @@ export function Room(){
     return(
         <div id="page-room">
             <Header />
-            <main className="roomMain">
-                <div className="room-title">
+            <Main id="roomMain">
+                <RoomTitle>
                     <h1>Sala {title}</h1>
                     {questions.length > 0 &&
                         <span>{questions.length} Pergunta(s)</span>
                     }   
-                </div>
+                </RoomTitle>
 
-                <form onSubmit={handleSendQuestion}>
+                <FormRoom onSubmit={handleSendQuestion}>
                     <textarea placeholder="O que voce quer perguntar?"
                               onChange={event => setNewQuestion(event.target.value)} 
                               value={newQuestion}
@@ -91,7 +93,7 @@ export function Room(){
                         )}
                         <Button type="submit" disabled={!user} >Enviar Pergunta</Button>
                     </div>
-                </form>
+                </FormRoom>
                 
                 <div className="question-list">
                     {questions.map(question => {
@@ -121,7 +123,7 @@ export function Room(){
                     })}
                 </div>
 
-            </main>
+            </Main>
         </div>
     )
 }
