@@ -14,6 +14,7 @@ declare module "styled-components" {
       background_secundary: string;
       background_three: string;
       background_four:  string;
+      background_five: string;
       text: string;
     };
   }
