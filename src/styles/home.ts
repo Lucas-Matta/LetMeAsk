@@ -62,7 +62,11 @@ export const MainContent = styled.div`
 
     > button{
         background: ${props => props.theme.colors.background_three};
-    }    
+    }
+    
+    > form > button{
+        background: ${props => props.theme.colors.background_four};
+    }
 
 `;
 

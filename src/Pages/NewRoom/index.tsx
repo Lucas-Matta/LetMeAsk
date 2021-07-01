@@ -4,7 +4,9 @@ import { FormEvent, useState } from 'react';
 import ilustrationImg from '../../assets/illustration.svg';
 import logoImg from '../../assets/logo.svg';
 
-import '../../styles/auth.scss';
+//import '../../styles/auth.scss';
+import { PageAuth, Aside, Main, MainContent } from '../../styles/home';
+
 import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
@@ -37,15 +39,15 @@ export function NewRoom(){
     }
 
     return(
-        <div id="page-auth">
-            <aside>
+        <PageAuth>
+            <Aside>
                 <img src={ilustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
                 <p>Tire as dúvidas da sua audiencia em tempo real</p>
-            </aside>
+            </Aside>
 
-            <main>
-                <div className="main-content">
+            <Main>
+                <MainContent>
                     <img src={logoImg} alt="Letmeask" />
                     <h2>Criar uma nova sala</h2>
                     <form onSubmit={handleCreateRoom} >
@@ -60,8 +62,8 @@ export function NewRoom(){
                         </Button>
                     </form>
                     <p>Quer entrar em uma sala existente ?<Link to="/">  clique aqui</Link></p>
-                </div>
-            </main>
-        </div>
+                </MainContent>
+            </Main>
+        </PageAuth>
     )
 }
