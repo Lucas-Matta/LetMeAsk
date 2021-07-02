@@ -1,6 +1,8 @@
 @media screen and (max-width: 900px){
     #roomMain{
         padding: 0 40px;
+
+        span{text-align: center;}
     }
 
     #roomTitle span{
@@ -27,7 +29,7 @@
 }
 
 @media screen and (max-width: 630px){
-    .content{
+    #content{
         text-align: center;
         flex-direction: column;
 

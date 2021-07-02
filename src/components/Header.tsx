@@ -1,4 +1,4 @@
-import '../styles/room2.scss'
+import { HeaderRoom } from '../styles/header';
 
 import React, { useContext } from "react";
 import Switch from "react-switch";
@@ -25,8 +25,8 @@ const Header: React.FC = () => {
 
   return (
     <>
-        <header>
-            <div className="content">
+        <HeaderRoom>
+            <div id="content">
                 <img src={logoImg} alt="Logo letmeask" />
                 <RoomCode code={roomId} />
                 <Switch
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
                     onColor={colors.secundary}
                 />
             </div>
-        </header>   
+        </HeaderRoom>   
     </>
   );
 };

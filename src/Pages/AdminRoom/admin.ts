@@ -40,16 +40,20 @@ export const RoomTitleAdmin = styled.div`
     h1{
         font-family: "Poppins", sans-serif;
         font-size: 24px;
-        color: #29292e;
+        color: ${props => props.theme.colors.text};
      }
 
      span{
          margin-left: 16px;
-         background: #e559f9;
+         background: ${props => props.theme.colors.background_five};
          border-radius: 999px;
          padding: 8px 16px;
          color: #FFF;
          font-weight: 500;
          font-size: 14px;
      }
+`;
+
+export const QuestionList = styled.div`
+    margin-top: 32px;
 `;

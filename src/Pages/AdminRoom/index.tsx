@@ -12,8 +12,9 @@ import { useRoom } from '../../hooks/useRoom';
 import { database } from '../../services/firebase';
 
 import '../../styles/room2.scss';
+import '../../styles/responsive/responsive.scss';
 
-import { HeaderAdmin, ContentAdmin, MainRoom, RoomTitleAdmin } from './admin';
+import { HeaderAdmin, ContentAdmin, MainRoom, RoomTitleAdmin, QuestionList } from './admin';
 
 // TypeScript
 type RoomParams = {
@@ -79,7 +80,7 @@ export function AdminRoom(){
                 </RoomTitleAdmin>
 
                 
-                <div className="question-list">
+                <QuestionList>
                     {questions.map(question => {
                         return(
                             <Question
@@ -107,8 +108,6 @@ export function AdminRoom(){
                                     </button>
                                 </>
                             )} 
-                            
-
                                 <button
                                     type="button"
                                     onClick={() => handleDeleteQuestion(question.id)}
@@ -118,8 +117,7 @@ export function AdminRoom(){
                             </Question>
                         )
                     })}
-                </div>
-
+                </QuestionList>
             </MainRoom>
         </>
     )
