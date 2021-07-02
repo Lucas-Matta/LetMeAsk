@@ -11,7 +11,6 @@ import { useAuth } from '../../hooks/useAuth';
 import { useRoom } from '../../hooks/useRoom';
 import { database } from '../../services/firebase';
 
-import '../../styles/room2.scss';
 import '../../styles/responsive/responsive.scss';
 
 import { HeaderAdmin, ContentAdmin, MainRoom, RoomTitleAdmin, QuestionList } from './admin';

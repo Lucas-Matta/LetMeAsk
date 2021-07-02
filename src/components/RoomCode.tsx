@@ -1,5 +1,5 @@
 import copyImg from '../assets/copy.svg';
-import '../styles/room-code.scss';
+import { ButtonCode } from '../styles/room-code';
 
 // TypeScript
 type RoomCodeProps = {
@@ -13,11 +13,11 @@ export function RoomCode(props: RoomCodeProps){
     }
 
     return(
-        <button className="room-code" onClick={copyRoomCodeToClipboard}>
+        <ButtonCode className="room-code" onClick={copyRoomCodeToClipboard}>
             <div>
                 <img src={copyImg} alt="Copy Room Code" />
             </div>
             <span>Sala #{props.code}</span>
-        </button>
+        </ButtonCode>
     )
 }

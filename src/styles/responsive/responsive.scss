@@ -31,10 +31,12 @@
 @media screen and (max-width: 630px){
     #content{
         text-align: center;
-        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3px;
 
         > img{
-            padding: 0 45px;
+            padding: 0 10px;
             margin-left: 8px;
             margin-bottom: 3px;
         }
