@@ -1,9 +1,10 @@
-.question{
-    background: #fefefe;
+import styled from 'styled-components';
+
+export const QuestionContainer = styled.div`
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0,0,0, 0.04);
     padding: 24px;
-    // Toda vez que uma Question vir atrás da outra, a partir da segunda
+    
     & + .question {
         margin-top: 8px;
     }
@@ -14,15 +15,16 @@
     }
 
     &.answered {
-        background: #DBDCDD;
+        background: ${props => props.theme.colors.background_seven} !important;
+        color: ${props => props.theme.colors.text} !important;
     }
 
     footer .user-info span{
-        color: #29292E;
+        color: ${props => props.theme.colors.text} !important;
     }
 
     p{
-        color: #29292e;
+        color: ${props => props.theme.colors.text} !important;
     }
 
     footer{
@@ -75,8 +77,9 @@
 
         span{
             margin-left: 8px;
-            color: #737380;
+            color: ${props => props.theme.colors.text} !important;
             font-size: 14px;
         }
     }
-}
+
+`;

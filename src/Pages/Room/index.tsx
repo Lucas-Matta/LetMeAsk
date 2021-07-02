@@ -1,6 +1,3 @@
-// Estilo da Pagina
-import './room';
-
 // Responsivo da Pagina
 import '../../styles/responsive/responsive.scss';
 

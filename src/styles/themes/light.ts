@@ -14,6 +14,8 @@ export default {
     background_three: "#ea4335", // Botão Laranja
     background_four:  "#835afd",
     background_five: "#e559f9", // Rosa Fraco
+    background_six: "#fefefe;", // Branco (textarea)
+    background_seven: "#DBDCDD", // Background para pergunta respondida
     text: "black",
   },
 };

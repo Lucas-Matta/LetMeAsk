@@ -14,6 +14,8 @@ export default {
     background_three: "rgb(167, 29, 17)", // Botão Laranja
     background_four:  "rgb(39, 2, 149)",  // Botão Roxo Forte
     background_five: "rgb(131, 5, 149)", // Roxo Forte
+    background_six: "rgb(25, 27, 28)", // Preto Fosco (textarea)
+    background_seven: "#292c2e", // Background para pergunta respondida
     text: "#FFF", // Branco
   },
   
