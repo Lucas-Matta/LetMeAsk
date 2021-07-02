@@ -13,6 +13,8 @@ import { database } from '../../services/firebase';
 
 import '../../styles/room2.scss';
 
+import { HeaderAdmin, ContentAdmin } from './admin';
+
 // TypeScript
 type RoomParams = {
     id: string;
@@ -55,18 +57,18 @@ export function AdminRoom(){
             isHighLighted: true,
         })
     }
-
+    
     return(
-        <div id="page-room">
-            <header>
-                <div className="content">
+        <>
+            <HeaderAdmin>
+                <ContentAdmin id="content">
                     <img src={logoImg} alt="Logo letmeask" />
                     <div className="content2">
                         <RoomCode code={roomId} />
                         <Button onClick={handleEndRoom} isOutlined >Encerrar Sala</Button>
                     </div>
-                </div>
-            </header>
+                </ContentAdmin>
+            </HeaderAdmin>
 
             <main className="roomMain">
                 <div className="room-title">
@@ -119,6 +121,6 @@ export function AdminRoom(){
                 </div>
 
             </main>
-        </div>
+        </>
     )
 }
