@@ -68,7 +68,7 @@ export function Room(){
     }
 
     return(
-        <div id="page-room">
+        <>
             <Header />
             <Main id="roomMain">
                 <RoomTitle id="roomTitle">
@@ -125,6 +125,6 @@ export function Room(){
                     })}
                 </QuestionList>
             </Main>
-        </div>
+        </>
     )
 }

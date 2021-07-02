@@ -13,7 +13,7 @@ import { database } from '../../services/firebase';
 
 import '../../styles/room2.scss';
 
-import { HeaderAdmin, ContentAdmin } from './admin';
+import { HeaderAdmin, ContentAdmin, MainRoom, RoomTitleAdmin } from './admin';
 
 // TypeScript
 type RoomParams = {
@@ -60,23 +60,23 @@ export function AdminRoom(){
     
     return(
         <>
-            <HeaderAdmin>
-                <ContentAdmin id="content">
-                    <img src={logoImg} alt="Logo letmeask" />
-                    <div className="content2">
-                        <RoomCode code={roomId} />
-                        <Button onClick={handleEndRoom} isOutlined >Encerrar Sala</Button>
-                    </div>
-                </ContentAdmin>
-            </HeaderAdmin>
+        <HeaderAdmin>
+            <ContentAdmin id="content">
+                <img src={logoImg} alt="Logo letmeask" />
+                <div className="content2">
+                    <RoomCode code={roomId} />
+                    <Button onClick={handleEndRoom} isOutlined >Encerrar Sala</Button>
+                </div>
+            </ContentAdmin>
+        </HeaderAdmin>
 
-            <main className="roomMain">
-                <div className="room-title">
+            <MainRoom id="roomMain">
+                <RoomTitleAdmin id="room-title">
                     <h1>Sala {title}</h1>
                     {questions.length > 0 &&
                         <span>{questions.length} Pergunta(s)</span>
                     }        
-                </div>
+                </RoomTitleAdmin>
 
                 
                 <div className="question-list">
@@ -120,7 +120,7 @@ export function AdminRoom(){
                     })}
                 </div>
 
-            </main>
+            </MainRoom>
         </>
     )
 }

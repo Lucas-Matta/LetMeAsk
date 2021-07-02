@@ -31,3 +31,25 @@ export const MainRoom = styled.main`
     max-width: 800px;
     margin: 0 auto;
 `;
+
+export const RoomTitleAdmin = styled.div`
+    margin: 32px 0 24px;
+    display: flex;
+    align-items: center;
+
+    h1{
+        font-family: "Poppins", sans-serif;
+        font-size: 24px;
+        color: #29292e;
+     }
+
+     span{
+         margin-left: 16px;
+         background: #e559f9;
+         border-radius: 999px;
+         padding: 8px 16px;
+         color: #FFF;
+         font-weight: 500;
+         font-size: 14px;
+     }
+`;
