@@ -38,4 +38,9 @@ export const ButtonStyle = styled.div`
             cursor: not-allowed;
         }
     }
+
+    #button{
+        border-color: ${props => props.theme.colors.background_four};
+        background: ${props => props.theme.colors.background_primary};
+    }
 `;
