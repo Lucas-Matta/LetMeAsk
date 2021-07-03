@@ -1,7 +1,7 @@
 import { DARK } from "../../constants/theme";
 
 export default {
-  title: DARK,
+  titleTheme: DARK,
 
   colors: {
     primary: "#FFF", // Branco

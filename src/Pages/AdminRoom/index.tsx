@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import { useHistory, useParams } from 'react-router-dom';
 import deleteIgm from '../../assets/delete.svg';
 import checkImg from '../../assets/check.svg';
@@ -15,6 +16,11 @@ import '../../styles/responsive/responsive.scss';
 
 import { HeaderAdmin, ContentAdmin, MainRoom, RoomTitleAdmin, QuestionList } from './admin';
 
+import Switch from "react-switch";
+import useToggleTheme from "../../hooks/useToggleTheme";
+import { DARK } from "../../constants/theme";
+import { ThemeContext } from "styled-components";
+
 // TypeScript
 type RoomParams = {
     id: string;
@@ -25,8 +31,10 @@ export function AdminRoom(){
     const params = useParams<RoomParams>();
     const roomId = params.id
     const history = useHistory();
-
     const { title, questions } = useRoom(roomId);
+
+    const { toggleTheme } = useToggleTheme();
+    const { colors, titleTheme } = useContext(ThemeContext);
 
     // Função para deletar a sala
     async function handleEndRoom(){
@@ -63,9 +71,20 @@ export function AdminRoom(){
         <HeaderAdmin>
             <ContentAdmin id="content">
                 <img src={logoImg} alt="Logo letmeask" />
-                <div className="content2">
+                <div id="content2">
                     <RoomCode code={roomId} />
                     <Button onClick={handleEndRoom} isOutlined >Encerrar Sala</Button>
+                    <Switch
+                        onChange={toggleTheme}
+                        checked={titleTheme === DARK}
+                        checkedIcon={false}
+                        uncheckedIcon={false}
+                        height={10}
+                        width={40}
+                        handleDiameter={20}
+                        offColor={colors.primary}
+                        onColor={colors.secundary}
+                    />
                 </div>
             </ContentAdmin>
         </HeaderAdmin>

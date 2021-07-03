@@ -1,7 +1,7 @@
 import { LIGHT } from "../../constants/theme";
 
 export default {
-  title: LIGHT,
+  titleTheme: LIGHT,
 
   colors: {
     primary: "#835afd", // Roxo CLaro

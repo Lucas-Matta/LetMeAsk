@@ -22,7 +22,7 @@ const ThemeContextProvider: React.FC = ({ children }) => {
   );
 
   function toggleTheme() {
-    setTheme(theme.title === LIGHT ? dark : light);
+    setTheme(theme.titleTheme === LIGHT ? dark : light);
   }
 
   return (
