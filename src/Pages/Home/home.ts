@@ -58,6 +58,7 @@ export const MainContent = styled.div`
 
     > img{
         align-self: center;
+        color: #FFF;
     }
 
     h2{

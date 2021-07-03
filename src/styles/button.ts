@@ -41,6 +41,7 @@ export const ButtonStyle = styled.div`
 
     #button{
         border-color: ${props => props.theme.colors.background_four};
-        background: ${props => props.theme.colors.background_primary};
+        background: ${props => props.theme.colors.background_secundary};
+        color: white;
     }
 `;
