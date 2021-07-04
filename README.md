@@ -5,7 +5,7 @@
 
 ### 📋 Sobre o projeto
 
-Letmeask, é uma aplicação desenvolvida com o objetivo de ajudar Stramers a criarem salas de perguntas e respostas, para o publico deles enquanto fazem transmissão ao vivo. Foi desenvolvida no evento NLW da Rocketset, e com mais algumas funcionalidades adicionadas por mim.
+Letmeask, é uma aplicação desenvolvida com o objetivo de ajudar Stramers a criarem salas de perguntas e respostas, para o publico deles enquanto fazem transmissão ao vivo. Foi desenvolvida no evento NLW da Rocketset, e com mais algumas funcionalidades adicionadas por mim, incluindo a parte adaptavel para mobile (responsivo).
 
 ***
 
@@ -15,6 +15,7 @@ Letmeask, é uma aplicação desenvolvida com o objetivo de ajudar Stramers a cr
 * TypeScript
 * Firebase
 * Styled Components
+* SCSS
 
 ***
 
