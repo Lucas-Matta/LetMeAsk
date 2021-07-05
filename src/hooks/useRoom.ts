@@ -55,7 +55,7 @@ export function useRoom(roomId: string){
                     isHighlighted: value.isHighlighted,
                     likeCount: Object.values(value.likes ?? {}).length,
                     // Vai verificar se o usuário deu like, se não, vai retornar nulo (não vai tentar nem buscar infor)
-                    likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId == user?.id)?.[0],
+                    likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0],
                 }
             })
 

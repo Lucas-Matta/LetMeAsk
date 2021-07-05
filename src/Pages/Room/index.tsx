@@ -31,7 +31,7 @@ export function Room(){
         event.preventDefault();
 
         // Verificação para ver se tem alguma pergunta
-        if(newQuestion.trim() == ''){
+        if(newQuestion.trim() === ''){
             return;
         }
         

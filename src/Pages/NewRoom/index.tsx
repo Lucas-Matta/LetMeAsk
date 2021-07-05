@@ -24,7 +24,7 @@ export function NewRoom(){
         event.preventDefault();
 
         // Remove os espaços digitados no texto
-        if(newRoom.trim() == '') {
+        if(newRoom.trim() === '') {
             return;
         }
 
