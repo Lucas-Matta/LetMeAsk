@@ -11,6 +11,9 @@ import { RoomCode } from '../components/RoomCode';
 import logoImg from '../assets/logo.svg';
 import { useParams } from "react-router-dom";
 
+import logoImgPreto from '../assets/logo.svg';
+import logoImgBranco from '../assets/logoBranca.png';
+
 // TypeScript
 type RoomParams = {
     id: string;
@@ -27,7 +30,11 @@ const Header: React.FC = () => {
     <>
         <HeaderRoom>
             <ContentHeader id="content" >
-                <img src={logoImg} alt="Logo letmeask" />
+                { titleTheme === DARK ? (
+                        <img src={logoImgBranco} alt="Letmeask" />
+                    ):(
+                        <img src={logoImgPreto} alt="Letmeask" />
+                )}
                 <RoomCode code={roomId} />
                 <Switch
                     onChange={toggleTheme}

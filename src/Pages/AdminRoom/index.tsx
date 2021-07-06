@@ -4,7 +4,6 @@ import deleteIgm from '../../assets/delete.svg';
 import checkImg from '../../assets/check.svg';
 import answerImg from '../../assets/answer.svg';
 
-import logoImg from '../../assets/logo.svg';
 import { Button } from '../../components/Button';
 import { Question } from '../../components/Question'
 import { RoomCode } from '../../components/RoomCode';
@@ -17,8 +16,11 @@ import { HeaderAdmin, ContentAdmin, MainRoom, RoomTitleAdmin, QuestionList } fro
 
 import Switch from "react-switch";
 import useToggleTheme from "../../hooks/useToggleTheme";
-import { DARK } from "../../constants/theme";
 import { ThemeContext } from "styled-components";
+
+import logoImgPreto from '../../assets/logo.svg';
+import logoImgBranco from '../../assets/logoBranca.png';
+import { DARK } from "../../constants/theme";
 
 // TypeScript
 type RoomParams = {
@@ -68,7 +70,11 @@ export function AdminRoom(){
         <>
         <HeaderAdmin>
             <ContentAdmin id="content">
-                <img src={logoImg} alt="Logo letmeask" />
+                { titleTheme === DARK ? (
+                        <img src={logoImgBranco} alt="Letmeask" />
+                    ):(
+                        <img src={logoImgPreto} alt="Letmeask" />
+                )}
                 <div id="content2">
                     <RoomCode code={roomId} />
                     <Button onClick={handleEndRoom} isOutlined >Encerrar Sala</Button>

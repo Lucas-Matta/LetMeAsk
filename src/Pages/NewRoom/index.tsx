@@ -1,8 +1,7 @@
 import { Link, useHistory } from 'react-router-dom';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useContext } from 'react';
 
 import ilustrationImg from '../../assets/illustration.svg';
-import logoImg from '../../assets/logo.svg';
 
 // Responsivo
 import '../../styles/responsive/responsive.scss';
@@ -14,10 +13,17 @@ import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
 
+import logoImgPreto from '../../assets/logo.svg';
+import logoImgBranco from '../../assets/logoBranca.png';
+import { DARK } from "../../constants/theme";
+import { ThemeContext } from 'styled-components';
+
 export function NewRoom(){
     const { user } = useAuth();
     const [newRoom, setNewRoom] = useState('');
     const history = useHistory();
+    
+    const { colors, titleTheme } = useContext(ThemeContext);
 
     // Função para criação da sala
     async function handleCreateRoom(event: FormEvent){
@@ -51,7 +57,11 @@ export function NewRoom(){
 
             <Main>
                 <MainContent>
-                    <img src={logoImg} alt="Letmeask" />
+                { titleTheme === DARK ? (
+                        <img src={logoImgBranco} alt="Letmeask" />
+                    ):(
+                        <img src={logoImgPreto} alt="Letmeask" />
+                    )}
                     <h2>Criar uma nova sala</h2>
                     <form onSubmit={handleCreateRoom} >
                         <input 

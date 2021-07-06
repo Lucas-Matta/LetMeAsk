@@ -17,8 +17,6 @@ import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
 
 import { DARK } from "../../constants/theme";
-import { LIGHT } from '../../constants/theme';
-
 import { ThemeContext } from 'styled-components';
 
 export function Home(){
