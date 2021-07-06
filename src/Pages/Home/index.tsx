@@ -1,8 +1,9 @@
-import { FormEvent, useState } from 'react'
+import { FormEvent, useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 
 import ilustrationImg from '../../assets/illustration.svg';
-import logoImg from '../../assets/logo.svg';
+import logoImgPreto from '../../assets/logo.svg';
+import logoImgBranco from '../../assets/logoBranca.png';
 import googleIconImg from '../../assets/google-icon.svg';
 
 // Responsivo da Home
@@ -15,10 +16,17 @@ import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
 
+import { DARK } from "../../constants/theme";
+import { LIGHT } from '../../constants/theme';
+
+import { ThemeContext } from 'styled-components';
+
 export function Home(){
     const history = useHistory();
     const { user, signInWithGoogle } = useAuth();
     const [roomCode, setRoomCode] = useState('');
+    
+    const { colors, titleTheme } = useContext(ThemeContext);
 
     // Função para mandar o usuário para outra tela, e logar no aplicativo
     async function handleCreateRoom(){
@@ -66,7 +74,12 @@ export function Home(){
 
             <Main>
                 <MainContent>
-                    <img src={logoImg} alt="Letmeask" />
+                    { titleTheme === DARK ? (
+                        <img src={logoImgBranco} alt="Letmeask" />
+                    ):(
+                        <img src={logoImgPreto} alt="Letmeask" />
+                    )}
+                    
                     <button className="create-room" onClick={handleCreateRoom}>
                         <img src={googleIconImg} alt="Logo do Google" />
                         Crie sua sala com o Google
