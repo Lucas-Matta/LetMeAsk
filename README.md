@@ -20,7 +20,6 @@ Letmeask, é uma aplicação desenvolvida com o objetivo de ajudar Stramers a cr
 ***
 
 ## :wrench: Colocando o projeto para rodar
-<br />
 
 Para colocar o projeto para rodar, basta seguir o passo a passo fornecido logo abaixo:
 
